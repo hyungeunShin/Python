@@ -20,5 +20,3 @@ print()
 print('www', 'naver', 'com', sep='.')
 
 print()
-
-# end 옵션
