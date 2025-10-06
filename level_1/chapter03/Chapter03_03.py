@@ -1,3 +1,5 @@
+# 리스트 자료형(순서O, 중복O, 수정O, 삭제O)
+
 a = []
 b = list()
 c = [70, 75, 80, 85]
@@ -51,11 +53,28 @@ print()
 # 리스트 함수
 a = [5, 2, 3, 1, 4]
 a.append(6)
-print(a)
+print('a - ', a)
 a.sort()
-print(a)
+print('a - ', a)
 a.reverse()
-print(a)
+print('a - ', a)
 print(a.index(3), a[3])
 a.insert(2, 7)
-print(a)
+print('a - ', a)
+a.remove(7)
+print('a - ', a)
+a.reverse()
+print(a.pop())
+print('a - ', a)
+print(a.pop())
+print('a - ', a)
+print(a.count(4))
+ex = [8, 9]
+a.extend(ex)
+print('a - ', a)
+print()
+
+while a:
+    data = a.pop()
+    print(data)
+    print(2 is data)

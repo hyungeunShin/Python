@@ -21,3 +21,18 @@ print(123)
 # 1. 타입에 맞는 오브젝트 생성
 # 2. 값 생성
 # 3. 콘솔 출력
+
+# id(identity) 확인
+m = 1
+n = 2
+print(id(m))
+print(id(n))
+print()
+
+# 같은 오브젝트 참조
+a = 1
+b = 1
+print(id(a))
+print(id(b))
+print(id(a) == id(b))
+print()

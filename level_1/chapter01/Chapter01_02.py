@@ -1,47 +1,34 @@
-# end 옵션
-# end의 default는 \n
-print('Welcome to', end=' ')
-print('IT News', end=' ')
-print('Web Site')
+# 파이썬 3가지 format
+x = 50
+y = 100
+z = 308276567
+text = 'Lee'
+
+# 출력 1
+ex1 = 'z = %s, text = %s, sum = %d' % (z, text, (x + y))
+print(ex1)
+
+# 출력 2
+ex2 = 'z = {z}, text = {text}, sum = {sum}'.format(z = z, text = text, sum = x + y)
+print(ex2)
+
+# 출력 3
+ex3 = f'z = {z}, text = {text}, sum = {x + y}'
+print(ex3)
+
+# 구분기호
+m = 100000000
+print(f'm : {m:,}')
 print()
 
-# file 옵션
-import sys
-print('Learn Python', file=sys.stdout)
+# 정렬
+# ^ : 가운데, < : 왼쪽, > : 오른쪽
+t = 20
+print(f't : {t:10}')
+print(f't : {t:^10}')
+print(f't : {t:<10}')
+print(f't : {t:>10}')
 print()
 
-# format 사용
-print('%s %s' % ('one', 'two'))
-print('{} {}'.format('one', 'two'))
-print('{} {}'.format('one', 2))
-print('{1} {0}'.format('one', 'two'))
-print()
-
-# %s
-print('%10s' % ('nice'))
-print('{:>10}'.format('nice'))
-
-print('%-10s' % ('nice'))
-print('{:10}'.format('nice'))
-
-print('{:_>10}'.format('nice'))
-print('{:^10}'.format('nice')) # 중앙정렬
-
-print('%.5s' % ('python study')) # slice
-print('{:10.5}'.format('python study'))
-print()
-
-# %d
-print('%d %d' % (1, 2))
-print('{} {}'.format(1, 2))
-
-print('%4d' % (42))
-print('{:4d}'.format(42))
-print()
-
-# %f
-print('%f' % (123456.123456789))
-print('{:f}'.format(123456.123456789))
-
-print('%06.2f' % (1.123456789))
-print('{:06.2f}'.format(1.123456789))
+print(f't : {t:-^10}')
+print(f't : {t:#<10}')
