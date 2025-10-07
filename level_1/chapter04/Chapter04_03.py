@@ -44,7 +44,7 @@ while i <= 10:
 
 print()
 
-# While - else 구문
+# While - else : 루프가 정상적으로 끝날 때만 실행, break를 만나면 실행X
 n = 10
 while n > 0:
     n -= 1
@@ -55,7 +55,7 @@ else:
 print()
 
 a = ['foo', 'bar', 'baz', 'qux']
-s = 'qux'
+s = 'qux1'
 i = 0
 while i < len(a):
     if a[i] == s:
@@ -64,7 +64,8 @@ while i < len(a):
 else:
     print(s, 'Not Found in list')
     
-    
+print()
+
 # 무한반복
 # while True:
 #     print('Foo')
