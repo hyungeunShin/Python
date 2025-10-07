@@ -88,14 +88,14 @@ for v in lt:
 
 print()
 
-# for - else
+# for - else : 루프가 정상적으로 끝날 때만 실행, break를 만나면 실행X
 numbers = [14, 3, 4, 7, 10, 24, 17, 2, 33, 15, 34, 36, 38]
 for num in numbers:
-    if num == 49:
-        print("Found : 49!")
-        break
+    if num == 14:
+        print("Found : 14!")
+        # break
 else:
-    print("Not found : 49")
+    print("Not found : 14")
 
 print()
 
