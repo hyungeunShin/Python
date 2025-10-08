@@ -1,73 +1,123 @@
-# 데이터 타입
-str1 = 'Python'
-str2 = "Java"
-bool = False
-list = [str1, str2]
-dict = {
-    "name": "홍길동",
-    "version": 1.0
-}
-tuple1 = (1, 2, 3)
-tuple2 = 4, 5, 6
-set = {1, 2, 3, 3}
-print(list)
-print(dict)
-print(tuple1)
-print(tuple2)
-print(set)
+# if
+
+print(type(True))
+print(type(False))
 print()
 
-print(type(str1))
-print(type(bool))
-print(type(list))
-print(type(dict))
-print(type(tuple1))
-print(type(tuple2))
-print(type(set))
+if True:
+    print("Good")
+
+if False:
+    print("Bad")
+
 print()
 
-# 정수
-big_int = 99999999999999999999999999999999999999999999999999
-print(big_int)
-print(type(big_int))
-
-# 실수
-float_v = 0.33333333333333333333333333333
-print(float_v)
+# 관계연산자
+x = 15
+y = 10
+print(x == y)
+print(x != y)
+print(x > y)
+print(x >= y)
+print(x < y)
+print(x <= y)
 print()
 
-# 연산
-print(9 / 4)
-print(9 // 4)
-print(9 % 4)
-print(1 + 1.0)
+# 참 : "values", [values], (values), {values}, 1
+# 거짓 : "", [], (), {}, 0, None
+city = ""
+if city:
+    print("You are in: ", city)
+else:
+    print("Please enter your city")
+
+city = "Seoul"
+if city:
+    print("You are in: ", city)
+else:
+    print("Please enter your city")
+
 print()
 
-# 형 변환
-a = 3.
-b = 6
-c = .7
-d = 12.7
-print(type(a))
-print(int(a), float(b), int(c), int(d))
-print(int(True)) # True: 1, False: 0
-print(float(False))
-print(complex(3))
-print(complex('3'))
-print(complex(False))
+# 논리연산자
+a = 75
+b = 40
+c = 10
+print(a > b and b > c)
+print(a > b or b > c)
+print(not a > b)
+print(not b > c)
+print(not True)
+print(not False)
 print()
 
-# 수치 연산
-print(abs(-2))
-print(pow(2, 3))
-print(2 ** 3)
-x, y = divmod(100, 8)
-print(x, y)
+# 산술 > 관계 > 논리 순서
+print(3 + 12 > 7 + 3)
+print(5 + 10 * 3 > 7 + 3 * 20)
+print(5 + 10 > 3 and 7 + 3 == 10)
+print(5 + 10 > 0 and not 7 + 3 == 10)
 print()
 
-# 외부 모듈
-import math
+score1 = 90
+score2 = 'A'
 
-print(math.ceil(5.1))
-print(math.floor(5.1))
-print(math.pi)
+if score1 >= 90 and score2 == 'A':
+    print("Pass")
+else:
+    print("Fail")
+
+print()
+
+id1 = "vip"
+id2 = "admin"
+grade = 'platinum'
+
+if id1 == "vip" or id2 == "admin":
+    print("관리자")
+
+if id2 == "admin" and grade == "platinum":
+    print("최상위 관리자")
+
+print()
+
+# 다중 조건문
+num = 90
+
+if num >= 90:
+    print('Grade : A')
+elif num >= 80:
+    print('Grade : B')
+elif num >= 70:
+    print('Grade : C')
+else:
+    print('과락')
+
+print()
+
+# 중첩 조건문
+grade = 'A'
+total = 95
+
+if grade == 'A':
+    if total >= 90:
+        print("장학금 100%")
+    elif total >= 80:
+        print("장학금 80%")
+    else:
+        print("장학금 70%")
+else:
+    print("장학금 50%")
+
+print()
+
+# in, not in
+q = [10, 20, 30]
+w = {70, 80, 90, 90}
+e = {"name": 'Lee', "city": "Seoul", "grade": "A"}
+r = (10, 12, 14)
+
+print(15 in q)
+print(90 in w)
+print(12 not in r)
+print("name" in e)  # key 검색
+print("seoul" in e.values())  # value 검색

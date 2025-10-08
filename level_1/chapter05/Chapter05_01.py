@@ -1,126 +1,95 @@
-# fucntion
+# class
 
 # 예제 1
-def first_func(w):
-    print("Hello, ", w, sep='')
+class Dog:
+    species = 'firstdog'
 
-first_func("Gentleman")
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+# 클래스 정보
+print(Dog)
+
+# 인스턴스화
+a = Dog('aa', 1)
+b = Dog('bb', 2)
+c = Dog('aa', 1)
+
+# 비교
+print(a == b, id(a), id(b), id(c))
+
+# 네임스페이스
+print(a.__dict__)
+print(b.__dict__)
+print('{}: {}, {}: {}'.format(a.name, a.age, b.name, b.age))
+
+if a.species == 'firstdog':
+    print('{0} is a {1}'.format(a.name, a.species))
+
+print(Dog.species)
+print(a.species)
+print(b.species)
 print()
 
-# 예제 2
-def return_func(w):
-    return "Hello, " + str(w)
+# 예제2
+class SelfTest:
+    def func1():
+        print('Func1 called')
+    def func2(self):
+        print(id(self))
+        print('Func2 called')
 
-print(return_func("Gentleman"))
+f = SelfTest()
+print(id(f))
+# f.func1() TypeError: SelfTest.func1() takes 0 positional arguments but 1 was given
+f.func2()
+SelfTest.func1()
+# SelfTest.func2() TypeError: SelfTest.func2() missing 1 required positional argument: 'self'
+SelfTest.func2(f)
 print()
 
 # 예제 3
-def func_mul1(x):
-    y1 = x * 10
-    y2 = x * 20
-    y3 = x * 30
-    return y1, y2, y3
+class Warehouse:
+    stock = 0
 
-x, y, z = func_mul1(10)
-print(x, y, z)
+    def __init__(self, name):
+        self.name = name
+        Warehouse.stock += 1
+
+    def __del__(self):
+        Warehouse.stock -= 1
+
+item1 = Warehouse('item1')
+item2 = Warehouse('item2')
+print(Warehouse.stock)
+print(item1.name)
+print(item2.name)
+print(item1.__dict__)
+print(item2.__dict__)
+print(Warehouse.__dict__)
+
+del item1
+print(Warehouse.__dict__)
 print()
 
 # 예제 4
-def func_mul2(x):
-    y1 = x * 10
-    y2 = x * 20
-    y3 = x * 30
-    return (y1, y2, y3)
+class Dog:
+    species = 'firstdog'
 
-t = func_mul2(20)
-print(t)
-print()
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-# 예제 5
-def func_mul3(x):
-    y1 = x * 10
-    y2 = x * 20
-    y3 = x * 30
-    return [y1, y2, y3]
+    def info(self):
+        return '{} is {} years old'.format(self.name, self.age)
+    
+    def speak(self, sound):
+        return '{} says {}!'.format(self.name, sound)
 
-l = func_mul3(30)
-print(l)
-print()
-
-# 예제 6
-def func_mul4(x):
-    y1 = x * 10
-    y2 = x * 20
-    y3 = x * 30
-    return {'v1': y1, 'v2': y2, 'v3': y3}
-
-d = func_mul4(40)
-print(d)
-print()
-
-# *args, **kwargs
-
-# *args(언팩킹) - 튜플 형식
-def args_func(*args):
-    for i, v in enumerate(args):
-        print('Reuslt : {}'.format(i), v)
-
-args_func('Lee', 'Kim', 'Park')
-print()
-
-# **kwargs(언팩킹) - 딕셔너리 형식
-def kwargs_func(**kwargs):
-    for v in kwargs.keys():
-        print("{}".format(v), kwargs[v], sep=': ')
-
-kwargs_func(name1='Lee', name2='Park', name3='Kim', age=12)
-print()
-
-# 혼합
-def example(args_1, args_2, *args, **kwargs):
-    print(args_1, args_2, args, kwargs)
-    print(type(args))
-    print(type(kwargs))
-
-example(10, 20, 'Lee', 'Kim', 'Park', age1=10, age2=20, age3=30)
-print()
-
-# 중첩함수
-def nested_func(num):
-    def func_in_func(num):
-        print(num)
-    print('In Func')
-    func_in_func(num + 100)
-
-nested_func(100)
-# func_in_func(100)
-print()
-
-# 람다
-def mul_func(x, y):
-    return x * y
-
-lambda_mul_func = lambda x, y: x * y
-
-print(mul_func(1, 5))
-print(lambda_mul_func(1, 5))
-print()
-
-def func_final(x, y, func):
-    print(x * y * func(10, 10))
-
-func_final(1, 2, mul_func)
-func_final(1, 2, lambda_mul_func)
-func_final(1, 2, lambda x, y: x * y)
-print()
-
-# Hint
-def tot_length1(word: str, num: int) -> int:
-    return len(word) * num
-
-print(tot_length1("i love you", 10))
-
-def tot_length2(word: str, num: int) -> None:
-    print('hint exam2 : ', len(word) * num)
-
-tot_length2("gentleman", 10)
+a = Dog('a', 3)
+b = Dog('b', 10)
+print(a.info())
+print(a.speak('aaaa'))
+print(b.info())
+print(b.speak('bbbb'))
