@@ -1,4 +1,5 @@
 # package
+# __init__.py : Python 3.3 부터는 없어도 패키지로 인식한다. 하지만 하위 호환을 위해 작성 추천
 
 import sys
 import os
