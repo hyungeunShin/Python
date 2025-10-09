@@ -1,4 +1,5 @@
 __pycache__
 test.obj
-resource/
-sound/
+resource/test1.txt
+resource/test2.txt
+resource/test3.txt
