@@ -1,14 +1,14 @@
 # 함수 인자
 
 # Non-default argument follows default argument
-# def greet(msg="Good morning!", name):
-#     return "Hi! " + name + ', ' + msg
+# def greet(msg='Good morning!', name):
+#     return 'Hi! ' + name + ', ' + msg
 
-def greet(name, msg="Good morning!"):
-    return "Hi! " + name + ', ' + msg
+def greet(name, msg='Good morning!'):
+    return 'Hi! ' + name + ', ' + msg
 
-print(greet("Kim"))
-print(greet("Park", "How do you do?"))
+print(greet('Kim'))
+print(greet('Park', 'How do you do?'))
 print()
 
 def add1(a, b=10, c=15):

@@ -3,7 +3,7 @@
 from urllib import request
 import json
 
-response = request.urlopen("https://jsonplaceholder.typicode.com/users")
+response = request.urlopen('https://jsonplaceholder.typicode.com/users')
 response_json = response.read()
 d = json.loads(response_json)
 
