@@ -1,4 +1,6 @@
-# 중첩 Dict 조회
+# Dict -> json
+
+import json
 
 d = {
     'group1': [
@@ -13,5 +15,9 @@ d = {
     'type': {'a': 'employee', 'b': 'officer', 'c': 'director', 'd': 'manager', 'e': 'service provider'}
 }
 
-print('Name : {0} Age : {1}, Type : {2}'.format(d['group2'][0]['name'], d['group2'][0]['age'], d['type']['b']))
-print('Name : {0} Age : {1}, Type : {2}'.format(d.get('group2')[0].get('name'), d.get('group2')[0].get('age'), d.get('type').get('b')))
+json_obj = json.dumps(d, indent=4)
+print(json_obj)
+
+with open('./resource/Chapter02_12.json', 'w') as file:
+    # json.dump(d, file)
+    json.dump(d, file, indent=4)

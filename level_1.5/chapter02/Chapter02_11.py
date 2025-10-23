@@ -1,4 +1,6 @@
-# 중첩 Dict 조회
+# 중첩 Dict 추가
+
+from pprint import pprint
 
 d = {
     'group1': [
@@ -13,5 +15,11 @@ d = {
     'type': {'a': 'employee', 'b': 'officer', 'c': 'director', 'd': 'manager', 'e': 'service provider'}
 }
 
-print('Name : {0} Age : {1}, Type : {2}'.format(d['group2'][0]['name'], d['group2'][0]['age'], d['type']['b']))
-print('Name : {0} Age : {1}, Type : {2}'.format(d.get('group2')[0].get('name'), d.get('group2')[0].get('age'), d.get('type').get('b')))
+# d['group1'].append({'name': 'Jung', 'age': '22', 'sex': 'Male', 'married': 'Yes'})
+# d['type'].update({'f': 'engineer'})
+# pprint(d, indent=1, width=200, sort_dicts=False)
+
+d.get('group1').append({'name': 'Jung', 'age': '22', 'sex': 'Male', 'married': 'Yes'})
+# d.get('type').update({'f': 'engineer'})
+d.get('type')['f'] = 'engineer'
+pprint(d, indent=1, width=200, sort_dicts=False)
