@@ -17,4 +17,4 @@ while True:
         break
     else:
         for txt in result:
-            print("-", txt)
+            print('-', txt)

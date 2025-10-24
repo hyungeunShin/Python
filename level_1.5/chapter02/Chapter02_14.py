@@ -1,6 +1,6 @@
 # Dict 반복문
 
-l = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"]
+l = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple']
 
 d1 = dict(enumerate(l))
 print(d1)
