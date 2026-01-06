@@ -64,5 +64,25 @@ class Car():
 car1 = Car('car1', {'color': 'white', 'horsepower': 100, 'price': 5000})
 car2 = Car('car1', {'color': 'black', 'horsepower': 200, 'price': 6000})
 
+print(car1)
+print(car2)
+
+print()
+
 print(car1.__dict__)
 print(car2.__dict__)
+
+print()
+
+car_list = []
+
+car_list.append(car1)
+car_list.append(car2)
+
+print(car_list)
+
+print()
+
+for x in car_list:
+    print(x)
+    print(repr(x))
