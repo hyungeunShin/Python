@@ -44,13 +44,13 @@ class Car(object):
 
     # Static Method
     @staticmethod
-    def is_bmw(inst):
-        if inst._company == 'Bmw':
-            return 'OK! This car is {}.'.format(inst._company)
-        return 'Sorry. This car is not Bmw.'
+    def is_car1(inst):
+        if inst._company == 'car1':
+            return 'This car is {}.'.format(inst._company)
+        return 'Sorry. This car is not car1'
       
-car1 = Car('Bmw', {'color' : 'Black', 'horsepower': 270, 'price': 5000})
-car2 = Car('Audi', {'color' : 'Silver', 'horsepower': 300, 'price': 6000})
+car1 = Car('car1', {'color': 'white', 'horsepower': 100, 'price': 5000})
+car2 = Car('car2', {'color': 'black', 'horsepower': 200, 'price': 6000})
 
 # 가격 정보(인상 전)
 print(car1.get_price())
@@ -76,23 +76,23 @@ print(car2.get_price_culc())
 
 print()
 
-# Bmw 여부(스태틱 메소드 미사용)
-def is_bmw(inst):
-    if inst._company == 'Bmw':
-        return 'OK! This car is {}.'.format(inst._company)
-    return 'Sorry. This car is not Bmw.'
+# car1 여부(스태틱 메소드 미사용)
+def is_car1(inst):
+    if inst._company == 'car1':
+        return 'This car is {}.'.format(inst._company)
+    return 'Sorry. This car is not car1'
 
 # 별도의 메소드 작성 후 호출
-print(is_bmw(car1))
-print(is_bmw(car2))
+print(is_car1(car1))
+print(is_car1(car2))
 
 print()
 
-# Bmw 여부(스태틱 메소드 사용)
-print(Car.is_bmw(car1))
-print(Car.is_bmw(car2))
+# car1 여부(스태틱 메소드 사용)
+print(Car.is_car1(car1))
+print(Car.is_car1(car2))
 
 print()
 
-print(car1.is_bmw(car1))
-print(car2.is_bmw(car2))
+print(car1.is_car1(car1))
+print(car2.is_car1(car2))
