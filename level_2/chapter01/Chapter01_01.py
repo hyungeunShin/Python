@@ -1,4 +1,4 @@
-# 객체 지향 프로그래밍(OOP) -> 코드의 재사용, 코드 중복 방지 등
+# 클래스
 
 # 일반적인 코딩
 
@@ -62,7 +62,7 @@ class Car():
         return 'repr : {} - {}'.format(self._company, self._details)
     
 car1 = Car('car1', {'color': 'white', 'horsepower': 100, 'price': 5000})
-car2 = Car('car1', {'color': 'black', 'horsepower': 200, 'price': 6000})
+car2 = Car('car2', {'color': 'black', 'horsepower': 200, 'price': 6000})
 
 print(car1)
 print(car2)
