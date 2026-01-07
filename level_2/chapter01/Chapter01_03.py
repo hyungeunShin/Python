@@ -88,7 +88,7 @@ print(is_bmw(car2))
 
 print()
 
-# Bmw 여부(스테이틱 메소드 사용)
+# Bmw 여부(스태틱 메소드 사용)
 print(Car.is_bmw(car1))
 print(Car.is_bmw(car2))
 
