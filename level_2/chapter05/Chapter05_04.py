@@ -13,7 +13,7 @@ def main():
 
     start_time = time.time()
 
-    with futures.ThreadPoolExecutor() as executor:
+    with futures.ThreadPoolExecutor(max_workers=worker) as executor:
         result = executor.map(sum_generator, WORK_LIST)
 
     end_time = time.time()
